@@ -1,38 +1,29 @@
 import React from 'react';
-import NewPost from './NewPost';
+import FeedItem from './FeedItem';
 import PropTypes from 'prop-types';
 
-class NewsFeed extends React.Component 
+function NewsFeed (props) 
 {
-    constructor(props) {
-        super(props);
-        //super accesses the React.Component constructor
-        this.state = {
-          //all state value key-value pairs go here
-          newsFeedList: [
-            {
-                
-                count: 0,
-              userName: "name1",
-              feed: 'feed1'
-            }
-          ],
-          currentSearchTerm: "",
-        };
 
-        render(){
-        return (
-            <div>
-                <hr />
-                {props.newsFeedList.map((post, index) =>
-                    <NewsFeed title={post.title}
-                        feed={post.feed}
-                        key={index} />
-                )}
-            </div>
-        );
+    return (
+        <div>
+            <hr />
+            {props.newsFeedList.map((post, index) =>
+                <FeedItem title={post.title}
+                    content={post.content}
+                    count = {post.count}
+                    like = {post.like} 
+                    dislike = {post.dislike} 
+                    key={index} />
+            )}
+        </div>
+    );
+}
 
         
        
+    NewsFeed.propTypes = {
+        newsFeedList: PropTypes.array
+    };
        
 export default NewsFeed;

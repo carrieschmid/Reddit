@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 
 function FeedItem (props)
 {
-     function handleLikeClick = () => {
+     function handleLikeClick(){
         props.onNewLike(props.count);
       }
 
-      function handleDisLikeClick = () => {
+      function handleDisLikeClick(){
         props.onNewDisLike(props.count);
       }
 
@@ -34,8 +34,7 @@ FeedItem.propTypes = {
     content: PropTypes.string.isRequired,
     count: PropTypes.number,
     like: PropTypes.number,
-    dislikes: PropTypes.number,
-    feed: PropTypes.string.isRequired
+    dislikes: PropTypes.number
 };
     
 
