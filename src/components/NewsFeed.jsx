@@ -9,17 +9,16 @@ function NewsFeed (props)
  return (
   <div>
    <hr />
-   {props.newsFeedItem.map((post, index) =>
-    <FeedItem title={post.title}
+   {props.newsFeedItem.map((post, i) =>
+    <FeedItem 
      content={post.content}
-     count = {post.count}
      like = {post.like} 
-     dislike = {post.dislike} 
-     key={index}
-     //  index={i}
+     dislike = {post.dislike}
      onNewLike={props.onNewLike}
      onNewDislike={props.onNewDislike}
-     //this is passed into the function in App.jsx
+     //this is passed into the function in App.jsx 
+     key={post.id}
+    index={i}
     />
      
    )}
@@ -35,7 +34,7 @@ NewsFeed.propTypes = {
  dislikes: PropTypes.number,
  onNewLike: PropTypes.func,
  onNewDislike: PropTypes.func,
- index: PropTypes.number
+//  index: PropTypes.number
 };
        
 export default NewsFeed;

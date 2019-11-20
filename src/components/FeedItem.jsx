@@ -12,21 +12,17 @@ function FeedItem (props)
  }
 
 
- return(
-    
-        
+ return(     
   <div className="card" >
-   {/* <img src={props.img} className="card-img-top" style ={imgStyle} alt="red"/> */}
    <div className="card-body">
-    <h5 className="card-title">{props.title}</h5>
     <p>{props.content}</p>
-
+    <p>Likes: {props.likes}</p>
+    <p>Dislikes: {props.dislikes}</p>         
+    <div>
+            <button onClick={handleLikeClick}><i>thumb_up</i></button>
+            <button onClick={handleDislikeClick}><i>thumb_down</i></button>
             
-    <button onClick={handleLikeClick}>Like </button>
-    <button onClick={handleDislikeClick}>Dislike </button>
-            
-    {/* <p>Likes: {props.likes}<button onClick={this.handleLikeClick}></button> </p> */}
-    {/* <p>Dislikes: {props.dislikes}<button onClick={this.handleDislikeClick}></button> </p>    */}
+          </div>
    </div>
   </div>
  );
@@ -34,15 +30,12 @@ function FeedItem (props)
 }
 
 FeedItem.propTypes = {
- // img: PropTypes.element,
- index: PropTypes.number,
- title: PropTypes.string.isRequired,
  content: PropTypes.string.isRequired,
- count: PropTypes.number,
  likes: PropTypes.number,
  dislikes: PropTypes.number,
  onNewLike: PropTypes.func,
- onNewDislike: PropTypes.func
+ onNewDislike: PropTypes.func,
+ index:PropTypes.number
 };
     
 

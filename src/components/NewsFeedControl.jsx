@@ -7,18 +7,21 @@ import PropTypes from 'prop-types';
 function NewsFeedControl(props) {
  return (
   <div>
-   <NewPost onAddingNewPostToList={props.handleAddingNewPostToList} />
+   <NewPost onNewPostCreation={props.handleAddingNewPostToList} />
    <hr />
    <NewsFeed newsFeedItem={props.newsFeedItem} />
   </div>
  );
 }
 
-NewsFeedControl.propTypes = {
-   
- handleAddingNewPostToList: PropTypes.func,
- newsFeedList: PropTypes.func
-    
-};
+
+NewsFeedController.propTypes = {
+    onNewPostCreation: PropTypes.func,
+    postList: PropTypes.array,
+    likes: PropTypes.number,
+    dislikes: PropTypes.number,
+    onNewLike: PropTypes.func,
+    onNewDislike: PropTypes.func
+  };
 
 export default NewsFeedControl;

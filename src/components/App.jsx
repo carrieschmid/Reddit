@@ -1,5 +1,6 @@
 import React from 'react';
-import DiscussionBoard from './DiscussionBoard';
+import NewsFeedController from './NewsFeedController';
+
 // import Error404 from './Error404';
 // import { Switch, Route } from 'react-router-dom';
 
@@ -25,12 +26,12 @@ class App extends React.Component {
   this.setState({ newsFeedItem: newNewsFeedItem });
  }
     
- handleLikes(){
+ handleLikes(i){
   var copyMList = this.state.masterPostList;
   copyMList.likes = copyMList.likes + 1; 
   this.setState({masterPostList: copyMList});
  }
- handleDislikes(){
+ handleDislikes(i){
   var copyMList = this.state.masterPostList;
   copyMList.dislikes = copyMList.dislikes + 1; 
   this.setState({masterPostList: copyMList});
@@ -46,11 +47,13 @@ class App extends React.Component {
   
     <div className="row">
      <div className="col-md-4">
-      <DiscussionBoard 
+      <NewsFeedController
        newsFeedItem={this.state.newsFeedItem} 
-       handleAddingNewFeedItem={this.handleAddingNewFeedItem}
-       onNewLike={this.handleLikes}
-       onNewDislike={this.handleDislikes}/>
+       onNewPostCreation={this.handleAddingNewPost}
+      onNewLike={this.handleLikes}
+      onNewDislike={this.handleDislikes}/>
+
+
      </div>
   
 

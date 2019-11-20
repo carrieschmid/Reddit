@@ -1,16 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { v4 } from 'uuid';
 
 
 
 function NewPost(props){
 
- let _post = null;
+ let _content = null;
+ let _likes = 0;
+ let _dislikes = 0; 
     
  function onNewPostFormSubmission(event) {
   event.preventDefault();
-  props.onAddingNewPostToList({feed: _post.value});
-  _post.value = '';
+  props.onNewPostCreation({content: _content.value, likes: _likes, dislikes: _dislikes, id: v4()});
+  _content.value = '';
  }
     
  return(
@@ -18,13 +21,10 @@ function NewPost(props){
    <h1>Make A New Post</h1>
    <form onSubmit={onNewPostFormSubmission}>
     <input type="text"
-     id='userName'
-     // placeholder='User Name'
-     // ref={(input) => {_userNames = input;}}/>
-     // <textarea
-     // id='post'
-     placeholder='What is on your mind?'
-     ref={(textarea) => {_post = textarea;}}/>
+     id='content'
+     placeholder='Write your post here'
+     className='materialize-textarea'
+     ref={(textarea) => {_content = textarea;}}/>
     <button type='submit'>Submit!</button>
 
    </form>
@@ -33,7 +33,7 @@ function NewPost(props){
 }
 
 NewPost.propTypes = {
- onAddingNewPostToList: PropTypes.func
+ onNewPostCreation: PropTypes.func
 };
 
 export default NewPost;
