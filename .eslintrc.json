@@ -15,36 +15,36 @@
         "react"
     ],
     "rules": {
-        "react/jsx-key": 2,
-        "react/jsx-uses-vars": 2,
-        "react/jsx-uses-react": 2,
-        "react/jsx-no-duplicate-props": 2,
-        "react/jsx-no-undef": 2,
-        "react/no-multi-comp": 2,
+        "react/jsx-key": 1,
+        "react/jsx-uses-vars": 1,
+        "react/jsx-uses-react": 1,
+        "react/jsx-no-duplicate-props": 1,
+        "react/jsx-no-undef": 1,
+        "react/no-multi-comp": 1,
         "react/jsx-indent-props": [
-            "error",
-            2
+            "warn",
+            1
           ],
-        "react/jsx-pascal-case": 2,
-        "react/prop-types": 2,
+        "react/jsx-pascal-case": 1,
+        "react/prop-types": 1,
         "react/jsx-indent": [
             "warn",
-            2
+            1
         ],
         "indent": [
             "warn",
-            2
+            1
         ],
         "linebreak-style": [
-            "error",
+            "warn",
             "unix"
         ],
         "quotes": [
-            "error",
+            "warn",
             "single"
         ],
         "semi": [
-            "error",
+            "warn",
             "always"
         ]
     }
