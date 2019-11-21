@@ -1,6 +1,7 @@
 import React from 'react';
 import NewsFeedController from './NewsFeedController';
 
+
 // import Error404 from './Error404';
 // import { Switch, Route } from 'react-router-dom';
 
@@ -47,6 +48,7 @@ class App extends React.Component {
   
     <div className="row">
      <div className="col-md-4">
+      
       <NewsFeedController
        newsFeedItem={this.state.newsFeedItem} 
        onNewPostCreation={this.handleAddingNewPost}
